@@ -1,0 +1,47 @@
+可以这样运行脚本（假设脚本叫 sam2_seg_eval_cli.py，并且你只想测试 box+center 模式）：
+
+python sam2_seg_eval_cli.py \
+  --image-dir ./dataset/images \
+  --gt-label-dir ./dataset/labels \
+  --pred-bbox-dir ./pred_bboxes \
+  --result-dir ./results_box_center \
+  --ckpt ./checkpoints/sam2.1_hiera_tiny.pt \
+  --model-cfg sam2.1/sam2.1_hiera_t \
+  --device cuda \
+  --prompt-mode box+center \
+  --prompt-param '{"min_area_ratio":0.01}' \
+  --max-eval 50
+
+
+解释一下关键参数：
+
+--image-dir：原始图像目录。
+
+--gt-label-dir：YOLO 多边形标注目录（GT）。
+
+--pred-bbox-dir：YOLO 预测的检测框目录（txt 格式）。
+
+--result-dir：保存结果的目录，会生成 summary.json。
+
+--ckpt：SAM2 的 checkpoint 权重路径。
+
+--model-cfg：SAM2 配置（一般就是 sam2.1/sam2.1_hiera_t）。
+
+--device：cuda 或 cpu。
+
+--prompt-mode：三种可选 box、box+center、point_center。
+
+--prompt-param：可选 JSON 参数（如 min_area_ratio、bf_tolerance_pixels 等）。
+
+--max-eval：限制最大评估图片数（方便调试）。
+
+例如，如果只想跑纯点提示模式（point_center），只要换一下：
+
+python sam2_seg_eval_cli.py \
+  --image-dir ./dataset/images \
+  --gt-label-dir ./dataset/labels \
+  --pred-bbox-dir ./pred_bboxes \
+  --result-dir ./results_point \
+  --ckpt ./checkpoints/sam2.1_hiera_tiny.pt \
+  --device cuda \
+  --prompt-mode point_center
