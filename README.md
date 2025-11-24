@@ -3,7 +3,7 @@
 This repository contains two main components:
 
 1. **SAM+GrabCut Segmentation Pipeline (SAMGC)** — a set of advanced SAM2 prompting and mask‑refinement scripts.
-2. **YOLOv13SG** — a modified YOLOv13 model configuration supporting the proposed SG (Structure‑Guided) variant.
+2. **YOLOv13SG** — a modified YOLOv13 model configuration supporting the proposed SCDown and GSConvE variant.
 
 ---
 
