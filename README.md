@@ -1,5 +1,10 @@
 # OD-SAMGC
 
+OD-SAMGC is a unified framework designed for fruit semantic segmentation, with a particular focus on coffee-fruit segmentation in natural orchard environments.
+The system combines object-detection-guided high-quality mask generation using SAM2 and advanced refinement strategies, together with an enhanced YOLOv13 derivative to improve detection performance.
+
+This framework serves as a front-end image-processing module for robotic harvesting, providing precise instance segmentation that supports downstream tasks such as target localization, grasp planning, and ripeness assessment.
+
 This repository contains two main components:
 
 1. **SAM+GrabCut Segmentation Pipeline (SAMGC)** — a set of advanced SAM2 prompting and mask‑refinement scripts.
