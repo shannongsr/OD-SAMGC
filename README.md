@@ -14,7 +14,7 @@ OD-SAMGC/
 │
 ├── SAM+GrabCut/          # SAMGC scripts (prompting, refinement, evaluation)
 ├── box_and_point/        # Additional prompting utilities
-├── yolov13SG/            # YOLOv13SG model config (yaml)
+├── yolov13SG/            # YOLOv13SG contains the complete YOLOv13 project, with the proposed YOLOv13SG model configuration (YAML) fully integrated, allowing it to run and train as an independent YOLOv13 framework
 │
 ├── LICENSE
 └── README.md
